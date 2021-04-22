@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>Live Service</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+<script src="Index.js"></script>
+
+<!--Icon-->
+<link rel="shortcut icon" href="./Logo.jpg">
+
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;  margin:0; 
+      background-color: rgba(255, 255, 255, 0.877);}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+
+/*Video frame*/
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+  
+}
+#videoElement {
+	width: 750px;
+	height: 450px;
+	background-color: rgb(0, 0, 0);
+  margin-top: 10%;
+  margin-left: 22%;
+  border-style: ridge;
+}
+</style>
+
+
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+          <a href="index.html" class="w3-bar-item w3-button">
+              <img src="./Logo.jpg" alt="Logo image" width="30"> Higher Ground Tabernacle</a>
+          <!-- Right-sided navbar links. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="About.html" class="w3-bar-item w3-button">About</a>
+            <a href="Pictures.html" class="w3-bar-item w3-button">Pictures</a>
+            <a href="Staff.html" class="w3-bar-item w3-button">Staff</a>
+            <a href="Sermons.html" class="w3-bar-item w3-button">Sermons</a>
+            <a href="Live.html" class="w3-bar-item w3-button">Live</a>
+          </div>
+        </div>
+      </div>
+
+      <!--Video Frame-->
+      <div class="container">
+        <video  controls autoplay="true" id="videoElement">Your webbrowser is not supported </video>
+      </div>
+
+      <!--
+       -->
+      <!--Video javascript-->
+      <script>
+        navigator.mediaDevices.getUserMedia({
+          video: true
+        })
+        .then(stream => {
+          document.getElementById("videoElement").srcObject = stream; 
+        })
+      </script>
+</body>
+</html>
